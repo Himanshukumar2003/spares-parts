@@ -68,9 +68,8 @@ export default function Home() {
     <>
       <HeroSection />
       <PartsFiltter />
-
       <CategoryExplorer />
-      <ServicesGrid></ServicesGrid>
+      {/* <ServicesGrid></ServicesGrid> */}
       <ProductGrid></ProductGrid>
       <ClientSection />
       <ReviewSwiper></ReviewSwiper>
