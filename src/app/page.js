@@ -1,103 +1,101 @@
-import Image from "next/image";
+"use client";
+
+import BlogCard from "@/componets/blog-cards";
+import CategoryExplorer from "@/componets/category-explorer";
+import ClientSection from "@/componets/delars";
+import BumblebHomepage from "@/componets/nav";
+import PartsFiltter from "@/componets/parts-filter";
+import HeroSection from "@/home/hero-section";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import Footer from "@/componets/footer";
+import ProductGrid from "@/home/products";
+import ReviewSwiper from "@/home/rewies";
+import { Provider } from "react-redux";
+import { makeStore } from "@/lib/store";
+import ServicesGrid from "@/home/aim";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const articles = [
+    {
+      imageQuery: "/img/blog/blog-1.png",
+      title: "GREAT EXPERIENCES ON YOUR FAVORITE CAR",
+      author: "TUNG HOANG",
+      date: "MAR 22, 2024",
+      description:
+        "Sed mollis, eros et ultrices tempus, mauris ipsum Sed mollis, eros et ultrices tempus, mauris ipsum...",
+    },
+    {
+      imageQuery: "/img/blog/blog-2.png",
+      title:
+        "RIVIAN R1S FIRST DRIVE REVIEW: THE SUV FINALLY ARRIVES! (SORT OF)",
+      author: "TUNG HOANG",
+      date: "MAR 22, 2024",
+      description:
+        "Sed mollis, eros et ultrices tempus, mauris ipsum Sed mollis, eros et ultrices tempus, mauris ipsum",
+    },
+    {
+      imageQuery: "/img/blog/blog-1.png",
+      title: "WHICH COUNTRIES USE VEHICLES WITH A RIGHT-HAND STEERING WHEEL",
+      author: "TUNG HOANG",
+      date: "MAR 22, 2024",
+      description:
+        "Sed mollis, eros et ultrices tempus, mauris ipsum Sed mollis, eros et ultrices tempus, mauris ipsum",
+    },
+    {
+      imageQuery: "/img/blog/blog-1.png",
+      title: "TOP 10 SCENIC DRIVES FOR YOUR NEXT ROAD TRIP",
+      author: "JANE DOE",
+      date: "APR 01, 2024",
+      description:
+        "Sed mollis, eros et ultrices tempus, mauris ipsum Sed mollis, eros et ultrices tempus, mauris ipsum",
+    },
+    {
+      imageQuery: "/img/blog/blog-2.png",
+      title: "ESSENTIAL CAR MAINTENANCE TIPS FOR LONGER VEHICLE LIFE",
+      author: "JOHN SMITH",
+      date: "APR 10, 2024",
+      description:
+        "Sed mollis, eros et ultrices tempus, mauris ipsum Sed mollis, eros et ultrices tempus, mauris ipsum",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <>
+      <HeroSection />
+      <PartsFiltter />
+
+      <CategoryExplorer />
+      <ServicesGrid></ServicesGrid>
+      <ProductGrid></ProductGrid>
+      <ClientSection />
+      <ReviewSwiper></ReviewSwiper>
+      <div className="section bg-gray-50">
+        <div className="container mx-auto px-4">
+          <Swiper
+            modules={[Pagination, Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            pagination={false}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {articles.map((article, index) => (
+              <SwiperSlide key={index}>
+                <BlogCard {...article} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }
