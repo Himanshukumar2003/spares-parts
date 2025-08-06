@@ -70,7 +70,7 @@ export default function Deales() {
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <h2 className="text-2xl font-bold mb-4">Featured brands</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {brands.map((brand) => (
@@ -88,7 +88,7 @@ export default function Deales() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
