@@ -88,7 +88,7 @@ export default function Nav() {
                 { name: "HOME", href: "/" },
                 { name: "About", href: "/about" },
                 { name: "SHOP", href: "/shop" },
-                { name: "PRODUCT", href: "/products" },
+                { name: "PRODUCT", href: "/product" },
                 { name: "BLOG", href: "/blog" },
                 { name: "CONTACT US", href: "/contact" },
               ].map((item) => (
