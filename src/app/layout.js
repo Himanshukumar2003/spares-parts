@@ -1,17 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Kanit } from "next/font/google"; // ✅ Import Kanit
 import "./globals.css";
 import Providers from "@/lib/povider";
 import Nav from "@/componets/nav";
 import Footer from "@/componets/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const kanit = Kanit({
+  variable: "--font-kanit",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // optional: include required weights
 });
 
 export const metadata = {
@@ -22,10 +18,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Nav></Nav>
+      <body className={`${kanit.variable} antialiased`}>
+        <Nav />
         <Providers>{children}</Providers>
         <Footer />
       </body>

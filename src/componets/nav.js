@@ -1,22 +1,14 @@
 "use client";
+import React from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
+import Link from "next/link";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Search,
   Menu,
   X,
   User,
-  Heart,
-  ShoppingCart,
   ChevronDown,
   Car,
   Wrench,
@@ -29,7 +21,6 @@ import {
 
 export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [currentHero, setCurrentHero] = useState(0);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
 
   useEffect(() => {
@@ -66,38 +57,62 @@ export default function Nav() {
     { icon: Plus, name: "OTHER" },
   ];
 
-  const heroSlides = [
-    {
-      title: "CAR'S LED",
-      subtitle: "TAIL LIGHTS",
-      description: "PROVIDE A SAFETY ASPECT",
-      buttonText: "APPLY NOW",
-      bgImage: "/placeholder.svg?height=600&width=1200",
-    },
-    {
-      title: "MEGA SALE",
-      subtitle: "70% OFF",
-      description: "EXHAUST PIPE FOR SUPER CAR",
-      buttonText: "APPLY NOW",
-      bgImage: "/placeholder.svg?height=600&width=1200",
-    },
-  ];
-
   return (
-    <div className=" bg-white fixed top-0 z-[9999] w-full ">
-      <nav className="bg-black text-white h-[80px]">
+    <div className="bg-white fixed top-0 z-[9999] w-full">
+      {/* Top Navigation */}
+      <nav className="bg-[var(--primary)] text-white h-[80px]">
         <div className="container mx-auto px-4 h-full">
-          <div className="flex items-center   justify-between h-full">
+          <div className="flex items-center justify-between h-full">
+            {/* Logo */}
             <motion.div
               className="flex items-center space-x-8"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="relative h-ful">
+              <div className="logo">
+                <Link href="/">
+                  <Image
+                    src="/white-logo.png"
+                    alt="Logo"
+                    width={200}
+                    height={500}
+                  />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-6">
+              {[
+                { name: "HOME", href: "/" },
+                { name: "About", href: "/about" },
+                { name: "SHOP", href: "/shop" },
+                { name: "PRODUCT", href: "/products" },
+                { name: "BLOG", href: "/blog" },
+                { name: "CONTACT US", href: "/contact" },
+              ].map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-medium hover:text-[var(--accent)]"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Category Dropdown */}
+            <motion.div
+              className="flex items-center space-x-8"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="relative h-full">
                 <Button
                   variant="ghost"
-                  className="bg-yellow-400 rounded-none text-black hover:bg-yellow-500 h-full text-sm font-medium"
+                  className="bg-light text-white rounded-none h-full text-sm font-medium"
                   onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
                   data-dropdown-button="categories"
                 >
@@ -110,10 +125,11 @@ export default function Nav() {
                   />
                 </Button>
 
+                {/* Category Dropdown Panel */}
                 <AnimatePresence>
                   {isCategoriesOpen && (
                     <motion.div
-                      className="absolute top-[40px] left-0 mt-1  bg-white rounded-lg shadow-lg z-50"
+                      className="absolute top-[40px] left-0 mt-1 bg-white rounded-lg shadow-lg z-50"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -124,17 +140,16 @@ export default function Nav() {
                         {categories.map((category, index) => (
                           <motion.div
                             key={category.name}
-                            className="flex items-center space-x-3 p-3  border-yellow-500 hover:bg-yellow-500 rounded-lg cursor-pointer transition-colors"
+                            className="flex items-center space-x-3 p-3 border-[var(--accent)] hover:bg-[var(--accent)] rounded-lg cursor-pointer transition-colors"
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.2, delay: index * 0.05 }}
                             whileHover={{ x: 5 }}
-                            onClick={() => {
-                              setIsCategoriesOpen(false);
-                              // Handle category selection here
-                            }}
+                            onClick={() => setIsCategoriesOpen(false)}
                           >
-                            <category.icon className="w-5 h-5 text-black" />
+                            {React.createElement(category.icon, {
+                              className: "w-5 h-5 text-black",
+                            })}
                             <span className="text-black font-medium">
                               {category.name}
                             </span>
@@ -146,41 +161,22 @@ export default function Nav() {
                 </AnimatePresence>
               </div>
             </motion.div>
-            <div className="hidden md:flex items-center space-x-6">
-              <a
-                href="#"
-                className="text-yellow-400 hover:text-yellow-300 text-sm font-medium"
+
+            {/* Mobile Toggle */}
+            <div className="md:hidden">
+              <Button
+                size="icon"
+                className="bg-[var(--accent)] text-black hover:bg-[var(--accent-hover)]"
+                onClick={() => setIsMobileMenuOpen(true)}
               >
-                HOME
-              </a>
-              <a href="#" className="hover:text-yellow-400 text-sm font-medium">
-                SHOP
-              </a>
-              <a href="#" className="hover:text-yellow-400 text-sm font-medium">
-                PRODUCT
-              </a>
-              <a href="#" className="hover:text-yellow-400 text-sm font-medium">
-                BLOG
-              </a>
-              <a href="#" className="hover:text-yellow-400 text-sm font-medium">
-                PAGE
-              </a>
+                <Menu className="w-5 h-5" />
+              </Button>
             </div>
-            <motion.div
-              className="hidden md:flex items-center text-sm"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <span className="text-gray-300">Need help:</span>
-              <span className="text-yellow-400 ml-2 font-bold">
-                1900 568 659
-              </span>
-            </motion.div>
           </div>
         </div>
       </nav>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -197,42 +193,35 @@ export default function Nav() {
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="bg-yellow-400 text-black rounded-full w-10 h-10"
+                  className="bg-[var(--accent)] text-black rounded-full w-10 h-10 hover:bg-[var(--accent-hover)]"
                 >
                   <X className="w-5 h-5" />
                 </Button>
               </div>
               <nav className="space-y-6">
-                <a
-                  href="#"
-                  className="block text-xl font-medium text-yellow-400"
-                >
-                  HOME
-                </a>
-                <a
-                  href="#"
-                  className="block text-xl font-medium text-black hover:text-yellow-400"
-                >
-                  SHOP
-                </a>
-                <a
-                  href="#"
-                  className="block text-xl font-medium text-black hover:text-yellow-400"
-                >
-                  PRODUCT
-                </a>
-                <a
-                  href="#"
-                  className="block text-xl font-medium text-black hover:text-yellow-400"
-                >
-                  BLOG
-                </a>
-                <a
-                  href="#"
-                  className="block text-xl font-medium text-black hover:text-yellow-400"
-                >
-                  PAGE
-                </a>
+                <nav className="space-y-6">
+                  {[
+                    { name: "HOME", href: "/" },
+                    { name: "About", href: "/about" },
+                    { name: "SHOP", href: "/shop" },
+                    { name: "PRODUCT", href: "/products" },
+                    { name: "BLOG", href: "/blog" },
+                    { name: "CONTACT US", href: "/contact" },
+                  ].map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`block text-xl font-medium ${
+                        item.name === "HOME"
+                          ? "text-[var(--accent)]"
+                          : "text-black hover:text-[var(--accent)]"
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
               </nav>
               <div className="mt-12">
                 <Button className="w-full bg-black text-white hover:bg-gray-800">

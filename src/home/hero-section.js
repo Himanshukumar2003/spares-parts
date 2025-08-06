@@ -33,10 +33,10 @@ export default function HeroSection() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-4 md:p-8 text-center">
         <div className="relative z-10 text-white mx-auto max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold italic leading-tight mb-4 drop-shadow-md">
-            CAR&apos;S LED <br /> TAIL LIGHTS
+          <h1 className="text-3xl md:text-5xl lg:text-5xl font-extrabold italic leading-tight mb-4 drop-shadow-md">
+            CAR&apos;S LED TAIL LIGHTS
           </h1>
-          <p className="text-lg md:text-xl italic mb-8 text-yellow-300 drop-shadow">
+          <p className="text-lg md:text-xl italic mb-8 text-white ">
             PROVIDE A SAFETY ASPECT
           </p>
 
@@ -47,7 +47,7 @@ export default function HeroSection() {
               onChange={handleChange}
               onSubmit={onSubmit}
             />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-yellow-300" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-[var(--primary-dark)]" />
           </div>
         </div>
       </div>
@@ -56,10 +56,10 @@ export default function HeroSection() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white hover:bg-yellow-400 hover:text-black transition-all duration-300 h-12 w-12 rounded-full shadow-md"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20  hover:bg-yellow-400 hover:text-black transition-all duration-300 h-12 w-12 rounded-full shadow-md"
         aria-label="Previous"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-6 w-6 text-blue-900" />
       </Button>
 
       <Button

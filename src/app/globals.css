@@ -118,9 +118,9 @@
     @apply border-border outline-ring/50;
   }
 
-  body {
+  /* body {
     @apply bg-background text-foreground;
-  }
+  } */
 }
 
 
@@ -131,18 +131,46 @@
 
 
 
+:root {
+  --primary: #2C5B9D;
+  --primary-light: #4C76B2;
+  --primary-dark: #1E4072;
+  --accent: #1E4072;
+  --background: #F9FAFB;
+  --text-primary: #1A1A1A;
+  --text-secondary: #555555;
+  --white: #ffffff;
+}
+
+.bg-light {
+  background: var(--primary-light);
+
+}
+
+.bg-dark {
+  background: var(--primary-dark);
+
+}
+
+.bg-main {
+  background: var(--primary);
+
+}
+
+
+
 .btn {
   font-size: 15px;
   padding: 25px 35px 25px 35px;
-  color: #000000;
-  background: #f7c601;
+  color: white;
+  background: var(--primary-dark);
   border: 0px solid #ffffff;
   border-radius: 50px;
   font-style: italic;
 }
 
 .btn:hover {
-  background: #000000;
+  background: var(--primary-light);
   color: white;
 }
 
@@ -180,4 +208,18 @@
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 14px !important;
+}
+
+body {
+  font-family: var(--font-kanit), sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: italic;
 }

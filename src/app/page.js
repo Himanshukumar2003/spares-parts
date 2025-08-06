@@ -2,7 +2,7 @@
 
 import BlogCard from "@/componets/blog-cards";
 import CategoryExplorer from "@/componets/category-explorer";
-import ClientSection from "@/componets/delars";
+import ClientSection from "@/componets/clints";
 import BumblebHomepage from "@/componets/nav";
 import PartsFiltter from "@/componets/parts-filter";
 import HeroSection from "@/home/hero-section";
@@ -18,6 +18,7 @@ import ReviewSwiper from "@/home/rewies";
 import { Provider } from "react-redux";
 import { makeStore } from "@/lib/store";
 import ServicesGrid from "@/home/aim";
+import Deales from "@/componets/delars";
 
 export default function Home() {
   const articles = [
@@ -67,10 +68,12 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <PartsFiltter />
+      {/* <PartsFiltter /> */}
       <CategoryExplorer />
       {/* <ServicesGrid></ServicesGrid> */}
+      <Deales></Deales>
       <ProductGrid></ProductGrid>
+
       <ClientSection />
       <ReviewSwiper></ReviewSwiper>
       <div className="section bg-gray-50">

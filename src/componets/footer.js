@@ -10,6 +10,7 @@ import {
   Globe,
   CreditCard,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -18,8 +19,7 @@ export default function Footer() {
         {/* Column 1: Info */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-yellow-400 rounded-sm" />
-            <span className="text-2xl font-bold text-yellow-400">BUMBLEB</span>
+            <Image src="/logo.png" alt="" width={300} height={300}></Image>
           </div>
           <p className="text-sm text-gray-400">
             Hi, we are always open for cooperation & suggestions, contact us in
@@ -49,7 +49,7 @@ export default function Footer() {
               <li key={index}>
                 <Link
                   href="#"
-                  className="hover:text-yellow-400 transition-colors"
+                  className="hover:text-[var(--primary-dark)] transition-colors"
                 >
                   {item}
                 </Link>
@@ -72,7 +72,7 @@ export default function Footer() {
               <li key={index}>
                 <Link
                   href="#"
-                  className="hover:text-yellow-400 transition-colors"
+                  className="hover:[var(--primary-dark)] transition-colors"
                 >
                   {item}
                 </Link>
@@ -90,9 +90,9 @@ export default function Footer() {
             <Input
               type="email"
               placeholder="Your e-mail"
-              className="bg-transparent border-b border-gray-700 text-gray-300 placeholder:text-gray-500 focus:border-yellow-400 focus-visible:ring-0 focus-visible:ring-offset-0"
+              className="bg-transparent border-b border-gray-700 text-gray-300 placeholder:text-gray-500 focus:border-[var(--primary-dark)] focus-visible:ring-0 focus-visible:ring-offset-0"
             />
-            <Button className="bg-yellow-400 text-gray-950 font-bold hover:bg-yellow-500 transition-colors">
+            <Button className="[var(--primary-dark)] text-gray-950 font-bold [var(--primary-light)] transition-colors">
               SUBSCRIBE
             </Button>
           </div>
@@ -101,7 +101,7 @@ export default function Footer() {
             <Button
               variant="ghost"
               size="icon"
-              className="bg-yellow-400 hover:bg-yellow-500 rounded-sm"
+              className="bg-[var(--primary-light)] hover:bg-[var(--primary-dark)] rounded-sm"
             >
               <Facebook className="h-5 w-5 text-gray-950" />
               <span className="sr-only">Facebook</span>
@@ -109,7 +109,7 @@ export default function Footer() {
             <Button
               variant="ghost"
               size="icon"
-              className="bg-yellow-400 hover:bg-yellow-500 rounded-sm"
+              className="bg-[var(--primary-light)] hover:bg-[var(--primary-dark)] rounded-sm"
             >
               <X className="h-5 w-5 text-gray-950" />
               <span className="sr-only">X (Twitter)</span>
@@ -117,7 +117,7 @@ export default function Footer() {
             <Button
               variant="ghost"
               size="icon"
-              className="bg-yellow-400 hover:bg-yellow-500 rounded-sm"
+              className="bg-[var(--primary-light)] hover:bg-[var(--primary-dark)] rounded-sm"
             >
               <Whatsapp className="h-5 w-5 text-gray-950" />
               <span className="sr-only">Whatsapp</span>
@@ -125,7 +125,7 @@ export default function Footer() {
             <Button
               variant="ghost"
               size="icon"
-              className="bg-yellow-400 hover:bg-yellow-500 rounded-sm"
+              className="bg-[var(--primary-light)] hover:bg-[var(--primary-dark)] rounded-sm"
             >
               <TikTok className="h-5 w-5 text-gray-950" />
               <span className="sr-only">TikTok</span>
