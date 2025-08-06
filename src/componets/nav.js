@@ -17,11 +17,15 @@ import {
   Package,
   Droplets,
   Plus,
+  ShoppingCart,
 } from "lucide-react";
+import { toggleCart } from "@/lib/features/slice";
+import { useDispatch } from "react-redux";
 
 export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -87,7 +91,7 @@ export default function Nav() {
               {[
                 { name: "HOME", href: "/" },
                 { name: "About", href: "/about" },
-                { name: "SHOP", href: "/shop" },
+                { name: "dealer", href: "/delars" },
                 { name: "PRODUCT", href: "/product" },
                 { name: "BLOG", href: "/blog" },
                 { name: "CONTACT US", href: "/contact" },
@@ -159,6 +163,16 @@ export default function Nav() {
                     </motion.div>
                   )}
                 </AnimatePresence>
+
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="bg-transparent ml-3 hover:text-white"
+                  onClick={() => dispatch(toggleCart())}
+                >
+                  <ShoppingCart className="h-5 w-5 " />
+                  <span className="sr-only">Open Cart</span>
+                </Button>
               </div>
             </motion.div>
 

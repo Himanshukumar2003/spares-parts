@@ -19,8 +19,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${kanit.variable} antialiased`}>
-        <Nav />
-        <Providers>{children}</Providers>
+        <Providers>
+          <Nav />
+          {children}
+        </Providers>
         <Footer />
       </body>
     </html>

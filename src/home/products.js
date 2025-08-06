@@ -23,17 +23,6 @@ export default function ProductGrid() {
           </p>
         </div>
 
-        <div className="flex justify-end mb-4">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => dispatch(toggleCart())}
-          >
-            <ShoppingCart className="h-5 w-5" />
-            <span className="sr-only">Open Cart</span>
-          </Button>
-        </div>
-
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {products.map((item) => (
             <ProductCard key={item.id} product={item} />
