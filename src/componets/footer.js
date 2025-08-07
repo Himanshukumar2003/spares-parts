@@ -62,7 +62,7 @@ export default function Footer() {
           <h3 className="font-bold text-white uppercase">GET TO KNOW US</h3>
           <ul className="space-y-2 text-sm">
             {[
-              "About Bumbleb",
+              "About ",
               "Investors",
               "Career",
               "Contact Us",
@@ -92,7 +92,7 @@ export default function Footer() {
               placeholder="Your e-mail"
               className="bg-transparent border-b border-gray-700 text-gray-300 placeholder:text-gray-500 focus:border-[var(--primary-dark)] focus-visible:ring-0 focus-visible:ring-offset-0"
             />
-            <Button className="[var(--primary-dark)] text-gray-950 font-bold [var(--primary-light)] transition-colors">
+            <Button className="[var(--primary-dark)]  font-bold [var(--primary-light)] transition-colors">
               SUBSCRIBE
             </Button>
           </div>
@@ -103,7 +103,7 @@ export default function Footer() {
               size="icon"
               className="bg-[var(--primary-light)] hover:bg-[var(--primary-dark)] rounded-sm"
             >
-              <Facebook className="h-5 w-5 text-gray-950" />
+              <Facebook className="h-5 w-5 " />
               <span className="sr-only">Facebook</span>
             </Button>
             <Button
@@ -111,7 +111,7 @@ export default function Footer() {
               size="icon"
               className="bg-[var(--primary-light)] hover:bg-[var(--primary-dark)] rounded-sm"
             >
-              <X className="h-5 w-5 text-gray-950" />
+              <X className="h-5 w-5 " />
               <span className="sr-only">X (Twitter)</span>
             </Button>
             <Button
@@ -119,7 +119,7 @@ export default function Footer() {
               size="icon"
               className="bg-[var(--primary-light)] hover:bg-[var(--primary-dark)] rounded-sm"
             >
-              <Whatsapp className="h-5 w-5 text-gray-950" />
+              <Whatsapp className="h-5 w-5 " />
               <span className="sr-only">Whatsapp</span>
             </Button>
             <Button
@@ -127,7 +127,7 @@ export default function Footer() {
               size="icon"
               className="bg-[var(--primary-light)] hover:bg-[var(--primary-dark)] rounded-sm"
             >
-              <TikTok className="h-5 w-5 text-gray-950" />
+              <TikTok className="h-5 w-5 " />
               <span className="sr-only">TikTok</span>
             </Button>
           </div>
@@ -136,7 +136,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className="container mx-auto border-t border-gray-800 pt-6 mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
         <p className="mb-4 md:mb-0">
-          {"2024 © BUMBLEB WORDPRESS THEME. ALL RIGHT RESERVED."}
+          {"2025 © Brandingwaale . ALL RIGHT RESERVED."}
         </p>
         <div className="flex gap-3 flex-wrap justify-center text-2xl text-gray-500">
           <Globe title="WorldPay" />

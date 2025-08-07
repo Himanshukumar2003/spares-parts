@@ -40,9 +40,12 @@ export default function ReviewSwiper() {
   return (
     <div className="w-full bg-[#F4F2EB] section">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-3xl font-extrabold  mb-12">
-          What Our Customers Say
-        </h2>
+        <div className="text-center max-w-[800px] mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold italic text-black mb-6">
+            What Our Customers Say
+          </h2>
+          <p className="text-sm md:text-base text-gray-700"></p>
+        </div>
 
         <Swiper
           modules={[Navigation, Pagination, A11y]}

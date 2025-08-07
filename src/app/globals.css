@@ -184,7 +184,7 @@
 .swiper-button-prev,
 .swiper-button-next {
   color: white !important;
-  background-color: #f7c601;
+  background-color: var(--primary-dark);
   width: 40px !important;
   display: flex;
   justify-content: center;
@@ -199,7 +199,7 @@
 /* Hover Effect - Yellowish */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: #ffa03a;
+  background-color: var(--primary-light);
   color: #ffffff;
   transform: scale(1.1);
 }
@@ -222,4 +222,39 @@ h4,
 h5,
 h6 {
   font-style: italic;
+}
+
+
+
+
+
+
+.tag-hover-effect {
+  position: relative;
+  z-index: 1;
+  /* Ensure text is above pseudo-element */
+  transition: color 0.3s ease-in-out;
+  /* Smooth text color transition */
+}
+
+.tag-hover-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--accent);
+  transition: width 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.tag-hover-effect:hover::before {
+  width: 100%;
+}
+
+.tag-hover-effect:hover {
+  color: white;
+  border-color: var(--accent);
 }

@@ -42,9 +42,9 @@ export default function ProductDiscription() {
                   key={tab.value}
                   value={tab.value}
                   className={cn(
-                    "data-[state=active]:bg-blue-500 data-[state=active]:text-white data-[state=active]:shadow-md font-bold text-md ",
+                    "data-[state=active]:bg-[var(--primary-dark)] data-[state=active]:text-white data-[state=active]:shadow-md font-bold text-md ",
                     "transition duration-200 ease-in-out rounded-md px-4 py-2 text-sm font-semibold",
-                    "border border-gray-200 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    "border border-gray-200 hover:bg-blue-100 focus:outline-none "
                   )}
                 >
                   {tab.label}

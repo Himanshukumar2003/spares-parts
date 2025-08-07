@@ -15,8 +15,10 @@ export default function ProductGrid() {
     <div className="bg-gray-50 section">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-[800px] mx-auto">
-          <h2 className="text-3xl font-extrabold">Our Products</h2>
-          <p className="text-gray-600 text-sm mt-2">
+          <h2 className="text-3xl md:text-4xl font-bold italic text-black mb-6">
+            Our Products
+          </h2>
+          <p className="text-sm md:text-base text-gray-700">
             Discover why car owners and garages across India trust us for
             reliable, high-quality spare parts delivered with speed and
             assurance.

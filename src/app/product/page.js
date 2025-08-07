@@ -1,7 +1,7 @@
 import BreadcrumbHeader from "@/componets/breadcrumbHeader";
-import { ProductDetailPage } from "./_componets/product-deetiles";
+import { ProductDetailPage } from "./_componets/product-details";
 import ProductDiscription from "./_componets/description";
-import Fillter from "./_componets/filterbymarket";
+import Fillter from "./_componets/filter-market";
 
 export default function Page() {
   return (

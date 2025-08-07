@@ -91,7 +91,7 @@ export default function Nav() {
               {[
                 { name: "HOME", href: "/" },
                 { name: "About", href: "/about" },
-                { name: "dealer", href: "/delars" },
+                { name: "DEALER", href: "/delars" },
                 { name: "PRODUCT", href: "/product" },
                 { name: "BLOG", href: "/blog" },
                 { name: "CONTACT US", href: "/contact" },
@@ -99,7 +99,7 @@ export default function Nav() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium hover:text-[var(--accent)]"
+                  className="text-md font-medium hover:text-[var(--accent)]"
                 >
                   {item.name}
                 </Link>
@@ -108,7 +108,7 @@ export default function Nav() {
 
             {/* Category Dropdown */}
             <motion.div
-              className="flex items-center space-x-8"
+              className="flex items-center "
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -116,7 +116,7 @@ export default function Nav() {
               <div className="relative h-full">
                 <Button
                   variant="ghost"
-                  className="bg-light text-white rounded-none h-full text-sm font-medium"
+                  className="bg-light text-white rounded-none h-full text-sm font-medium "
                   onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
                   data-dropdown-button="categories"
                 >
@@ -133,7 +133,7 @@ export default function Nav() {
                 <AnimatePresence>
                   {isCategoriesOpen && (
                     <motion.div
-                      className="absolute top-[40px] left-0 mt-1 bg-white rounded-lg shadow-lg z-50"
+                      className="absolute top-[32px] left-0 mt-1 bg-white border-t-0  border-blue-500 border-2 shadow-lg z-50"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -144,7 +144,7 @@ export default function Nav() {
                         {categories.map((category, index) => (
                           <motion.div
                             key={category.name}
-                            className="flex items-center space-x-3 p-3 border-[var(--accent)] hover:bg-[var(--accent)] rounded-lg cursor-pointer transition-colors"
+                            className="group flex items-center border-b-2 border-gray-100 space-x-3 p-3 rounded-lg cursor-pointer transition-colors"
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.2, delay: index * 0.05 }}
@@ -152,9 +152,10 @@ export default function Nav() {
                             onClick={() => setIsCategoriesOpen(false)}
                           >
                             {React.createElement(category.icon, {
-                              className: "w-5 h-5 text-black",
+                              className:
+                                "w-5 h-5 text-black group-hover:text-blue-700",
                             })}
-                            <span className="text-black font-medium">
+                            <span className="text-black font-medium group-hover:text-blue-700">
                               {category.name}
                             </span>
                           </motion.div>
@@ -219,13 +220,13 @@ export default function Nav() {
                     { name: "About", href: "/about" },
                     { name: "SHOP", href: "/shop" },
                     { name: "PRODUCT", href: "/product" },
-                    { name: "dealer", href: "/delars" },
+                    { name: "Dealer", href: "/delars" },
                     { name: "CONTACT US", href: "/contact" },
                   ].map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`block text-xl font-medium ${
+                      className={`block text-lg font-medium ${
                         item.name === "HOME"
                           ? "text-[var(--accent)]"
                           : "text-black hover:text-[var(--accent)]"

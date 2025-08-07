@@ -77,11 +77,19 @@ export default function ServicesGrid() {
   return (
     <div className="p-8 bg-white">
       <div className="text-center mb-10 max-w-[800px] mx-auto">
-        <h2 className="text-center text-3xl font-extrabold ">Why Choose Us</h2>
-        <p className="text-gray-600 max-w-xl mx-auto text-center text-sm mt-2">
-          Discover why car owners and garages across India trust us for
-          reliable, high-quality spare parts delivered with speed and assurance.
-        </p>
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold italic text-black mb-6">
+            Why Choose Us
+          </h2>
+          <p className="text-sm md:text-base text-gray-700">
+            The first car manufacturers in the world were French companies
+            Panhard & Levassor (1889) and Peugeot (1891). Daimler and Benz
+            started out as innovators who experimented with car design to test
+            their engines before becoming full car manufacturers. They made
+            their early money by licensing their patents and selling their
+            engines to car manufacturers.
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">

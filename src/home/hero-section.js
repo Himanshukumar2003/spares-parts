@@ -2,7 +2,8 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
-
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 export default function HeroSection() {
   const placeholders = [
     "What's the first rule of Fight Club?",
@@ -41,13 +42,52 @@ export default function HeroSection() {
           </p>
 
           {/* Search bar */}
-          <div className="relative w-full max-w-md mx-auto">
+          <div className="relative w-full max-w-lg mx-auto">
             <PlaceholdersAndVanishInput
               placeholders={placeholders}
               onChange={handleChange}
               onSubmit={onSubmit}
             />
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-[var(--primary-dark)]" />
+          </div>
+
+          <div className="flex justify-center gap-6 mt-6">
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="genuine"
+                className="border-white data-[state=checked]:bg-blue-700 data-[state=checked]:text-white"
+              />
+              <Label
+                htmlFor="genuine"
+                className="text-white text-lg cursor-pointer"
+              >
+                Genuine
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="aftermarket"
+                className="border-white data-[state=checked]:bg-blue-700 data-[state=checked]:text-white"
+              />
+              <Label
+                htmlFor="aftermarket"
+                className="text-white text-lg cursor-pointer"
+              >
+                Aftermarket
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="oem"
+                className="border-white data-[state=checked]:bg-blue-700 data-[state=checked]:text-white"
+              />
+              <Label
+                htmlFor="oem"
+                className="text-white text-lg cursor-pointer"
+              >
+                OEM
+              </Label>
+            </div>
           </div>
         </div>
       </div>
@@ -56,7 +96,7 @@ export default function HeroSection() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20  hover:bg-yellow-400 hover:text-black transition-all duration-300 h-12 w-12 rounded-full shadow-md"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20  hover:bg-blue-400 hover:text-black transition-all duration-300 h-12 w-12 rounded-full shadow-md"
         aria-label="Previous"
       >
         <ChevronLeft className="h-6 w-6 text-blue-900" />
@@ -65,7 +105,7 @@ export default function HeroSection() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white hover:bg-yellow-400 hover:text-black transition-all duration-300 h-12 w-12 rounded-full shadow-md"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white hover:bg-blue-400 hover:text-black transition-all duration-300 h-12 w-12 rounded-full shadow-md"
         aria-label="Next"
       >
         <ChevronRight className="h-6 w-6" />
