@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 
 export function ProductCard({ imageSrc, title, description, category }) {
   return (
-    <Card className="flex flex-col md:flex-row p-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-card text-card-foreground">
+    <Card className="flex flex-col md:flex-row p-0 overflow-hidden  shadow-none border-0 transition-shadow duration-300 bg-card text-card-foreground">
       <div className="relative w-full md:w-1/3 aspect-video md:aspect-auto md:h-auto flex-shrink-0">
         <Image
           src={imageSrc || "/placeholder.svg?height=200&width=200&text=Product"}
@@ -44,7 +44,7 @@ export function ProductCard({ imageSrc, title, description, category }) {
           </p>
           {/* Enhanced "Fulfilled by" styling */}
           <p className="text-xs text-muted-foreground mb-4">
-            Fulfilled by{" "}
+            Fulfilled by:{" "}
             <span className="font-semibold text-[#2C5B9D]">
               Acme Auto Parts
             </span>
@@ -59,18 +59,10 @@ export function ProductCard({ imageSrc, title, description, category }) {
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full border-input bg-background hover:bg-accent hover:text-accent-foreground"
+            className="rounded-full border-input bg-background hover:bg-accent hover:text-white"
           >
             <ShoppingCart className="w-5 h-5" />
             <span className="sr-only">Add to cart</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="rounded-full border-input bg-background hover:bg-accent hover:text-accent-foreground"
-          >
-            <Heart className="w-5 h-5" />
-            <span className="sr-only">Add to wishlist</span>
           </Button>
         </div>
       </CardContent>

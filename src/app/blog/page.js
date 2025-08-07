@@ -51,8 +51,7 @@ export default function Component() {
   return (
     <>
       <BreadcrumbHeader title={"Blog"}></BreadcrumbHeader>{" "}
-      <div className="contanier mx-auto py-8 px-4 md:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Column (2/3 width on large screens) */}
+      <div className="contanier mx-auto py-8 px-4 md:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-2">
         <div className="lg:col-span-2">
           <div className="mb-8">
             <p>
@@ -63,16 +62,16 @@ export default function Component() {
             </p>
           </div>
 
-          <blockquote className="relative  border-l-4 border-amber-500 mb-8 pl-20">
-            <span className="absolute left-8 top-0 text-6xl font-serif text-amber-500 leading-none">
+          <blockquote className="relative  border-l-4 border-blue-500 mb-8 pl-20">
+            <span className="absolute left-8 top-0 text-6xl font-serif text-blue-500 leading-none">
               &ldquo;
             </span>
-            <p className="text-xl font-bold italic mb-2">
+            <p className="text-lg text-gray-600   font-medium italic mb-2">
               Vivamus aliquet elit ac nisl. Ut a nisl id ante tempus hendrerit.
               Phasellus accumsan cursus velitid ante tempus hendrerit. Donec
               interdum, metus et hendrerit aliquet&rdquo;
             </p>
-            <footer className="text-sm font-bold uppercase tracking-wider">
+            <footer className="text-lg italic   font-semibold uppercase tracking-wider text-blue-500 ">
               ROBERT SMITH
             </footer>
           </blockquote>
@@ -85,7 +84,19 @@ export default function Component() {
               ipsum aliquam libero, non adipiscing dolor urna a orci. Duis arcu
               tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
             </p>
-            <p>
+            <p className="mb-4">
+              Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Nulla
+              neque dolor, sagittis eget, iaculis quis, molestie non, velit.
+              Etiam rhoncus. Nunc interdum lacus sit amet orci. Phasellus leo
+              dolor, tempus non, auctor et, hendrerit quis, nisi.
+            </p>
+
+            <p className="mb-4">
+              Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero,
+              non adipiscing dolor urna a orci. Aenean commodo ligula eget
+              dolor. Nulla facilisi. Sed mollis, eros et ultrices tempus, mauris
+              ipsum aliquam libero, non adipiscing dolor urna a orci. Duis arcu
+              tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
               Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Nulla
               neque dolor, sagittis eget, iaculis quis, molestie non, velit.
               Etiam rhoncus. Nunc interdum lacus sit amet orci. Phasellus leo
@@ -96,8 +107,7 @@ export default function Component() {
           {/* Archives Section */}
         </div>
 
-        {/* Right Column (1/3 width on large screens) */}
-        <div className="lg:col-span-1">
+        <div className="lg:col-span-1 border-l border-gray-200 pl-6">
           {/* Recent Posts Section */}
           <div className="mt-8 lg:mt-0">
             <h2 className="text-lg font-bold uppercase border-b pb-2 mb-4">
