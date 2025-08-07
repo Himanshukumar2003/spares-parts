@@ -198,9 +198,8 @@ export function ProductDetailPage() {
               </p>
               <p className="flex items-center gap-2">
                 <span className="font-semibold text-gray-900 italic dark:text-gray-50 ">
-                  {/* <Hash className="text-4xl mr-2 text-gray-500" /> */}
                   Tags:
-                </span>{" "}
+                </span>
                 <sapn> {product.tags.join(", ")}</sapn>
               </p>
               <p className="flex items-center gap-2">

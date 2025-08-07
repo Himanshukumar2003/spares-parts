@@ -31,7 +31,8 @@ export default function ProductCard({ product }) {
           />
         </div>
         <div className="p-4 pb-0 pt-0">
-          <CardTitle className="text-sm font-semibold mb-1">
+          <div className="mb-2 text-gray-600">{product?.category}</div>
+          <CardTitle className="text-sm text-md font-semibold mb-1 line-clamp-2">
             {product.title}
           </CardTitle>
           <div className="flex items-center text-yellow-500 text-sm">
@@ -52,7 +53,7 @@ export default function ProductCard({ product }) {
       </CardContent>
       <CardFooter className="px-4 mt-0">
         <Button className="btn btnTwo" onClick={handleAddToCart}>
-          Add to Cart
+          View Product
         </Button>
       </CardFooter>
     </Card>
